@@ -1,4 +1,5 @@
 class BookController < ApplicationController
+	layout 'standard'
 	def list
 		@books = Book.all
 	end
@@ -32,7 +33,7 @@ class BookController < ApplicationController
 			redirect_to :action => 'show', :id => @book
 		else
 			@subjects = Subject.all
-			render : action => 'edit'
+			render :action => 'edit'
 		end
 	end
 	def book_param
